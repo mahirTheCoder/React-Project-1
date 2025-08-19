@@ -1,0 +1,4 @@
+@import "tailwindcss";
+@utility container {
+  margin-inline: auto;
+}
