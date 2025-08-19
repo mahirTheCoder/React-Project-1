@@ -26,18 +26,18 @@ const navItems = [
 
     <nav id='Navbar'>
       <div className="container">
-        <div className="manu_row">
-          <div className="logoImg w-[155px] h-[140px]">
+        <div className="manu_row flex items-center justify-between  pt-[29px]">
+          <div className="logoImg w-[155px] h-[40px]">
             <img src={logo} alt="" />
           </div>
-          <div className="items">
+          <div className="items flex gap-[35px]">
             {
               navItems.map((item, i)=>(
                 <Link key={i} className='text-xl font-normal text-primery font-family' to={item.navLinks}>{item.navContent}</Link>
               ))
             }
           </div>
-          <div className="boxButton ">
+          <div className="boxButton w-[140px] h-[47px] font-family bg-[#FBFBFB] text-[#0C0C0C] rounded-[23px] flex justify-center text-lg font-normal">
             <button>Get in touch</button>
           </div>
         </div>
