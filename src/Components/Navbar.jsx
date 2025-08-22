@@ -33,12 +33,12 @@ const navItems = [
           <div className="items flex gap-[35px]">
             {
               navItems.map((item, i)=>(
-                <Link key={i} className='text-xl font-normal text-primery font-family' to={item.navLinks}>{item.navContent}</Link>
+                <Link  key={i} className='text-xl font-normal text-primery font-family' to={item.navLinks}>{item.navContent}</Link>
               ))
             }
           </div>
-          <div className="boxButton w-[140px] h-[47px] font-family bg-[#FBFBFB] text-[#0C0C0C] rounded-[23px] flex justify-center text-lg font-normal">
-            <button>Get in touch</button>
+          <div className="boxButton w-[140px] h-[47px] font-family bg-[#FBFBFB] text-[#0C0C0C] rounded-[23px] flex justify-center text-lg font-normal hover:bg-black hover:text-white transition-all duration-300 ease-in-out items-center">
+            <button className=''>Get in touch</button>
           </div>
         </div>
       </div>
