@@ -15,7 +15,18 @@ const navItems = [
 
   {
     navContent: 'Contact Us',
-    navLinks: '/'
+    navLinks: '/',
+    Dropdown:[
+      {
+        dropdownContent: 'Contact Us details',
+        dropdownLinks: '/'
+      },
+      {
+        dropdownContent: 'phone number',
+        dropdownLinks: '/'
+      }
+    ]
+
   },
 ]
 
@@ -28,12 +39,25 @@ const navItems = [
       <div className="container">
         <div className="manu_row flex items-center justify-between  pt-[29px]">
           <div className="logoImg w-[155px] h-[40px]">
-            <img src={logo} alt="" />
+            <img src={logo} alt="picture" />
           </div>
           <div className="items flex gap-[35px]">
             {
               navItems.map((item, i)=>(
-                <Link  key={i} className='text-xl font-normal text-primery font-family' to={item.navLinks}>{item.navContent}</Link>
+                  <ul>
+                    <li>
+                    <Link  key={i} className='text-lg font-normal text-primery font-family' to={item.navLinks}>{item.navContent}</Link>
+
+                    {item.Dropdown &&
+                    <div className="dropdwnMenu w-[300px] p-3 rounded-[5px] bg-white">
+                      <ul>
+                        <li><Link to={'#'}>Phone</Link></li>
+                      </ul>
+                    </div>
+                    }
+                    </li>
+                  </ul>
+
               ))
             }
           </div>
