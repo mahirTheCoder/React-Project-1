@@ -1,14 +1,16 @@
 import React from 'react'
 import logo from '../assets/images/logo.png'
 import { Link } from 'react-router'
+import { IoMdArrowDropup } from "react-icons/io";
+
+
 const Navbar = () => {
 const navItems = [
   {
     navContent: 'Home',
-    navLinks: '/'
+    navLinks: '/',
   },
-
-  {
+{
     navContent: 'About',
     navLinks: '/'
   },
@@ -24,11 +26,16 @@ const navItems = [
       {
         dropdownContent: 'phone number',
         dropdownLinks: '/'
-      }
+      },
+      {
+        dropdownContent: 'Contact us email',
+        dropdownLinks: '/'
+      },
     ]
 
   },
 ]
+
 
 
 
@@ -45,19 +52,29 @@ const navItems = [
             {
               navItems.map((item, i)=>(
                   <ul>
-                    <li>
+                    <li className='relative'>
                     <Link  key={i} className='text-lg font-normal text-primery font-family' to={item.navLinks}>{item.navContent}</Link>
 
                     {item.Dropdown &&
-                    <div className="dropdwnMenu w-[300px] p-3 rounded-[5px] bg-white">
+                    <div className="dropdwnMenu w-[300px] p-3 rounded-[5px] bg-white absolute top-9">
+                     <button className='text-2xl text-white absolute top-[-14px] left-5'><IoMdArrowDropup /></button>
                       <ul>
-                        <li><Link to={'#'}>Phone</Link></li>
+                      
+                      return(
+                        {
+                          item.Dropdown.map((item , dp)=>{
+                            <li key={dp}>
+                              <Link to={item.dropdownLinks}>{item.dropdownContent}</Link>
+                            </li>
+                          })
+                        }
+
+                      );
                       </ul>
                     </div>
                     }
                     </li>
                   </ul>
-
               ))
             }
           </div>
